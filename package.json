@@ -1,0 +1,25 @@
+{
+  "name": "TestCafe-POC",
+  "version": "1.0.0",
+  "description": "POC for TestCafe",
+  "main": "",
+  "scripts": {
+    "test:firefox": "testcafe firefox ./tests -s takeOnFails=true --reporter spec,html:./report/report.html",
+    "test:safari": "testcafe safari ./tests -s takeOnFails=true --reporter html:./report/report.html",
+    "test:chrome": "testcafe chrome ./tests -s takeOnFails=true --reporter spec,html:./report/report.html",
+    "test:firefox:3": "testcafe -c 3 firefox ./tests -s takeOnFails=true --reporter html:./report/report.html",
+    "test:chrome:headless": "testcafe chrome:headless ./tests -s takeOnFails=true --reporter html:./report/report.html",
+    "test:multibrowser": "testcafe firefox,safari ./tests -s takeOnFails=true --reporter html:./report/report.html",
+    "test:docker": "bash ./runTestcafe.sh test $testEnv"
+  },
+  "keywords": [],
+  "author": "sarvesh.mehra@bisnode.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "npm": "^6.14.8",
+    "prettier": "^2.0.5",
+    "testcafe": "^1.9.0",
+    "testcafe-reporter-html": "^1.4.6"
+  }
+}

@@ -1,0 +1,15 @@
+image: testcafe/testcafe
+pipelines:
+  pull-requests:
+    '**':
+      - step:
+          script:
+            - npm ci
+            - /opt/testcafe/docker/testcafe-docker.sh 'firefox:headless,chromium --no-sandbox --disable-dev-shm-usage' tests/**/*
+
+  branches:
+    master:
+      - step:
+          script:
+            - npm ci
+            - /opt/testcafe/docker/testcafe-docker.sh 'firefox:headless,chromium --no-sandbox --disable-dev-shm-usage' tests/**/*

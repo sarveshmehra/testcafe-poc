@@ -1,0 +1,8 @@
+version: '2.2'
+
+services:
+  testcafe:
+    image: testcafe/testcafe:alpha
+    ports:
+      - 1337:1337
+      - 1338:1338
